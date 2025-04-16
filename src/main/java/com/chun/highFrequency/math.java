@@ -4,7 +4,7 @@ package com.chun.highFrequency;
  * @description: 数学类工具
  * @author: chun
  **/
-import java.math.*;
+
 
 public class math {
     public static void main(String[] args) {
@@ -17,5 +17,7 @@ public class math {
 
         System.out.println("求a的b次幂" + Math.pow(a, b));
 
+
     }
+
 }

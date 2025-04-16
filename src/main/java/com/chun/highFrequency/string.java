@@ -1,5 +1,7 @@
 package com.chun.highFrequency;
 
+import java.util.Arrays;
+
 /**
  * @description: 字符串处理
  * @author: chun
