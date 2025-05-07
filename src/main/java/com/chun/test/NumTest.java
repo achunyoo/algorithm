@@ -1,8 +1,6 @@
 package com.chun.test;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @description:
@@ -11,18 +9,25 @@ import java.util.List;
 
 public class NumTest {
     public static void main(String[] args) {
-        int end = (int)1e7;
-        System.out.println(toList(end));
+        int[] nums;
+        nums = new int[]{1, -1, 0};
+        subarraySum(nums,0);
+        String ss = "123";
+        int i = ss.hashCode();
     }
 
-    public static List<Integer> toList(int a){
-        List<Integer> list = new ArrayList<>();
-        while(a > 0) {
-            int b = a % 10;
-            list.add(b);
-            a/=10;
+    public static int subarraySum(int[] nums, int k) {
+        int count = 0;
+        for (int i = 0; i < nums.length; i++) {
+            int sum = 0;
+            for (int j = i; j < nums.length; j++) {
+                sum += nums[j];
+                if (sum == k) {
+                    count++;
+
+                }
+            }
         }
-        Collections.reverse(list);
-        return list;
+        return count;
     }
 }
