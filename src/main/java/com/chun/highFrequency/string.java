@@ -1,5 +1,6 @@
 package com.chun.highFrequency;
 
+import java.net.Socket;
 import java.util.Arrays;
 
 /**
@@ -14,6 +15,7 @@ public class string {
         System.out.println("字符串长度" + str.length());
         System.out.println("字符串首字母" + str.charAt(0));
         System.out.println("子字符串" + str.substring(2, 4));
+        Socket socket = new Socket();
 
         //StringBuilder工具类
         StringBuilder sb = new StringBuilder("hello");
