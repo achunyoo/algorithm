@@ -1,25 +1,24 @@
 package com.chun.sort;
 
 import java.util.Arrays;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @description: 快速排序
+ * @description:
  * @author: chun
  **/
 
-public class quickSort {
+public class test {
     public static void main(String[] args) {
         int[] test = new int[]{2,5,6,7,1,4,9,3};
-        int right = test.length;
-        sort(test);
-        System.out.print(Arrays.toString(test));
 
+        sort(test);
+        System.out.print(Arrays.toString( test));
     }
 
     public static void sort(int[] nums){
-        int length = nums.length - 1;
-        quickSort(nums,0,length);
+        int right = nums.length - 1;
+        int left = 0;
+        quickSort(nums,left,right);
     }
 
     public static void quickSort(int[] nums,int left,int right){
@@ -28,6 +27,7 @@ public class quickSort {
         }
 
         int mid = partition(nums,left,right);
+
         quickSort(nums,mid + 1,right);
         quickSort(nums,left,mid - 1);
     }
@@ -37,7 +37,7 @@ public class quickSort {
         int fast = left;
         int slow = left;
 
-        while(fast < right){
+        while(fast != right){
             if(nums[fast] < nums[pivot]){
                 swap(nums,slow,fast);
                 slow++;
@@ -46,6 +46,7 @@ public class quickSort {
         }
 
         swap(nums,slow,pivot);
+
         return slow;
     }
 
