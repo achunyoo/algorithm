@@ -72,6 +72,9 @@ public class Collection {
                 put("two", 2);
             }
         };
+        boolean one = map.containsKey("one");
+        Set<String> values = map.keySet();
+
         map.put("one", 1);
         map.put("two", 2);
         map.get("one");

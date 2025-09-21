@@ -1,24 +1,27 @@
-package com.chun.sort;
+package com.chun.treeNode;
 
-import java.util.Arrays;
+import javax.swing.tree.TreeNode;
+import java.util.*;
 
 /**
- * @description:
+ * @description: 树相关
  * @author: chun
  **/
 
-public class test {
+public class traversal {
+
     public static void main(String[] args) {
-        int[] test = new int[]{2,5,6,7,1,4,9,3};
 
-        sort(test);
-        System.out.print(Arrays.toString( test));
+        int[] nums = {6,7,8,9,1,2,3,11};
+        sort(nums);
+        System.out.println(Arrays.toString(nums));
     }
-
 
     public static void sort(int[] nums){
         int right = nums.length - 1;
         quickSort(nums,0,right);
+
+
     }
 
     public static void quickSort(int[] nums,int left,int right){
@@ -34,8 +37,9 @@ public class test {
 
     public static int partition(int[] nums,int left,int right){
         int pivot = right;
-        int slow = left;
+
         int fast = left;
+        int slow = left;
 
         while(fast < right){
             if(nums[fast] < nums[pivot]){
@@ -43,9 +47,8 @@ public class test {
                 slow++;
             }
             fast++;
-
-
         }
+
         swap(nums,slow,pivot);
         return slow;
     }
